@@ -141,19 +141,29 @@
             <p class="mainQuote" align="center">For Customers!</p>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <p class="mainQuote" align="center">LOGIN</p>
-              <form class="form-signin" action="#" method="POST">
-                      <div class="form-group">
-                        <label for="inputEmail" class="sr-only">Email address</label>
-                        <input style="border-radius: 0px;" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="{{ old('login_email')}}" name="login_email">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
-                      </div>
-                      <br>
-                      {{csrf_field()}}
-                      <button style="border-radius: 0px;background-color:#FFF;border:1px #DDD solid;color:#444;" class="btn btn-lg btn-block" type="submit">LOGIN</button>
-                    </form>
+              <form class="form-signin" action="{{ url('customer/login') }}" method="POST">
+          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"  value="{{ old('email')}}">
+          </div>
+          @if ($errors->has('email'))
+          <span class="help-block">
+            <strong>{{ $errors->first('email') }}</strong>
+          </span>
+          @endif
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+          </div>
+          @if ($errors->has('password'))
+          <span class="help-block">
+            <strong>{{ $errors->first('password') }}</strong>
+          </span>
+          @endif
+          <br>
+          {{csrf_field()}}
+          <button class="btn btn-lg btn-block" type="submit">LOGIN</button>
+        </form>
                     <br />
                     <div class="row">
                       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><img src="{{asset('img/analytics.png')}}" width="100em">&nbsp;&nbsp;&nbsp;</div>

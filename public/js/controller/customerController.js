@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+$(document).ready(function(){
 	var latitude;
 	var longitude;
 	var currentLocation;
@@ -64,13 +64,20 @@ $(document).ready(function(){
 	];
 	// getDistance(14.5498,121.0552,14.5534,121.0547);
 
-	for (i = 0; i < locations.length; i++) { 
+	for (i = 0; i < locations.length; i++) {
 		mapObj.addMarker({
 			lat: locations[i][1],
 			lng: locations[i][2],
 			icon: 'https://image.flaticon.com/icons/png/32/34/34343.png',
+			infoWindow: {
+				content: '<h4>Mechanic</h4><div><center><button type="button" class="btn" data-toggle="modal" data-target="#myModal">View</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn" >Hire</button></center></div>',
+				maxWidth: 150
+			},
+			mouseover: function(){
+				this.infoWindow.open();
+			},
 			mouseover: function(e) {
-				getDistance(14.5498,121.0552,14.5534,121.0547);	
+				getDistance(14.5498,121.0552,14.5534,121.0547);
 			}
 		});
 	}
@@ -120,7 +127,7 @@ function getFormattedAddress(lat, lng){
 				// console.log(results[4].formatted_address)
 				// console.log(results[5].formatted_address)
 				// console.log(results[6].formatted_address)
-			} 
+			}
 		} else {
 			console.log("error")
 		}

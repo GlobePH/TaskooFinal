@@ -43,6 +43,30 @@
   <div class="row" style="padding: 10px;">
   <div id="map" style="width: 100%; height: 70vh;"></div>
   </div>
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><img src="{{asset('img/wrench.png')}}" width="30em"> Alexis Lingad</h4>
+      </div>
+      <div class="modal-body">
+        <p>Primary Skill: <img src="{{asset('img/wrench.png')}}" width="30em">Mechanic</p>
+        <p>XP: 100</p>
+        <p>Rank: <img src="{{asset('img/rank/crown.png')}}" width="30em">Expert</p>
+        <p>Secondary Skill: <img src="{{asset('img/coding.png')}}" width="30em">Programmer, <img src="{{asset('img/bolt.png')}}" width="30em">Electrician</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>
 </div>
 </div>
