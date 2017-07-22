@@ -1,3 +1,4 @@
+
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- jQuery library -->
@@ -14,8 +15,17 @@ $(document).ready(function(){
 });
 </script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.js"></script>
+	<script type="text/javascript">
+		$(".js-example-basic-multiple").select2();
+		$(".js-example-basic-single").select2();
+	</script>
+
 	@if(Auth::check())
 	<script type="text/javascript" src="{{ asset('js/controller/workerController.js')}}"></script>
 	@elseif(Auth::guard('customers')->check())
 	<script type="text/javascript" src="{{ asset('js/controller/customerController.js')}}"></script>
+	@else
+	<script type="text/javascript" src="{{ asset('js/getLocation.js') }}"></script>
 	@endif
+
