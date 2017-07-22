@@ -40,7 +40,7 @@ class WorkerController extends Controller
 			$idName = $request['reg_w_first_name'] .'-'.$request['reg_w_last_name'] . '.' . $request->file('reg_w_cv')->getClientOriginalExtension();
 			$request->file('reg_w_id')->move(public_path('files/id/') , $idName);
 		}
-		
+
 		$worker = new Worker();
 
 		$worker->first_name = $fname;
@@ -89,7 +89,7 @@ class WorkerController extends Controller
 
 		$location->save();
 		return view('responses.success_register')->with('user', 'worker');
-		
+
 	}
 
 	public function login(Request $request)
@@ -100,7 +100,7 @@ class WorkerController extends Controller
 		                ]);
 
 		if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-			return redirect('customer/dashboard');
+			return redirect('worker/dashboard');
 		}else{
 			return redirect()->back()->with('invalid','Invalid Login Credentials.');
 		}

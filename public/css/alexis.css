@@ -11,7 +11,7 @@ html, body {
 }
 */
 .homeSidebar {
-  border-right: 1px solid #DDD;
+  border-right: 1px solid #444;
   font-size:1.5em;
 }
 
@@ -21,13 +21,13 @@ html, body {
 }
 
 .helper {
-  border: 1px solid #DDD;
+  border: 1px solid #444;
   padding:1em;
   height:18em;
 }
 
 .helper:hover {
-  background-color: #DDD;
+  background-color: #444;
 }
 
 .homeSidebar > a > div {
@@ -54,7 +54,7 @@ html, body {
   background-color: #FFF;
   color:#000;
   margin-right:2em;
-  border:1px solid #DDD;
+  border:1px solid #444;
   width:30em;
   height:5em;
   align:center;
@@ -108,7 +108,7 @@ html, body {
   width: 15em;
 }
 nav > .navbar {
-  border-bottom:1px solid #DDD;
+  border-bottom:1px solid #444;
 }
 a > div {
   text-decoration:none;

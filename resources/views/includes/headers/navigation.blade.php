@@ -39,7 +39,7 @@
       @if(Auth::check())
       <ul class="nav navbar-nav navbar-right" align="center">
         <li><a href="#">HOME</a></li>
-        <li><a href="#">SETTINGS</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#setModalC">SETTINGS</a></li>
         <li><a href="{{ url('worker/logout') }}">LOGOUT</a></li>
       </ul>
 

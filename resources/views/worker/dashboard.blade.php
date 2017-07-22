@@ -32,6 +32,65 @@
     </div>
 
   </div>
+  <!-- Modal -->
+<div id="setModalC" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><img src="{{asset('img/wrench.png')}}" width="30em"> Settings</h4>
+      </div>
+      <div class="modal-body">
+        <p>User Profile</p>
+        <form class="form-signin" action="#" method="POST">
+        <label for="choosePriSkill">Change Primary Skill:</label>
+        <select name="reg_w_primary" class="js-example-basic-single form-control">
+          <option value="Mechanic">Mechanic</option>
+          <option value="Carpenter">Carpenter</option>
+          <option value="Electrician">Electrcian</option>
+          <option value="Programmer">Programmer</option>
+          <option value="Tutor">Tutor</option>
+          <option value="House Keeper">House Keeper</option>
+          <option value="Plumber">Plumber</option>
+          <option value="Encoder">Encoder</option>
+        </select>
+        <label for="levelPriSkill">Change Rank:</label>
+        <select name="reg_w_rank" class="js-example-basic-single form-control">
+          <option value="knight">Newbie</option>
+          <option value="rook">Average</option>
+          <option value="crown">Expert</option>
+        </select>
+        <br />
+        <label for="levelPriSkill">Change Secondary Skills:</label>
+        <select name="reg_w_secondary[]" class="js-example-basic-multiple form-control flat" multiple="multiple">
+          <option value="Mechanic">Mechanic</option>
+          <option value="Carpenter">Carpenter</option>
+          <option value="Electrician">Electrcian</option>
+          <option value="Programmer">Programmer</option>
+          <option value="Tutor">Tutor</option>
+          <option value="House Keeper">House Keeper</option>
+          <option value="Plumber">Plumber</option>
+          <option value="Encoder">Encoder</option>
+        </select>
+      </form>
+        <br /><br />
+        <p>Security</p>
+        <form class="form-signin" action="#" method="POST">
+        <label for="levelPriSkill">Change Password:</label>
+        <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" placeholder="New Password" required name="password">
+        <label for="levelPriSkill">Confirm Password:</label>
+        <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" placeholder="Change Password" required name="password">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>
 
 @endsection
