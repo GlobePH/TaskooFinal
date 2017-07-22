@@ -37,13 +37,18 @@ html, body {
 .workerButton {
   padding: 1em;
   border-radius: 0px;
-  background-color: #282828;
-  color:#FFF;
+  background-color: #FFF;
+  color:#444;
   margin-right:2em;
-  border: none;
+  border:1px solid #DDD;
   width:30em;
   height:5em;
   align:center;
+}
+
+.workerButton:hover{
+  background-color: #DDD;
+  color:#111;
 }
 
 .dropdown-menu {
