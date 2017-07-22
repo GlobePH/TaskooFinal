@@ -41,7 +41,7 @@
       @elseif(Auth::guard('customers')->check())
       <ul class="nav navbar-nav navbar-right" align="center">
         <li><a href="#">HOME</a></li>
-        <li><a href="#">SETTINGS</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#setModal">SETTINGS</a></li>
         <li><a href="{{ url('customer/logout') }}">LOGOUT</a></li>
       </ul>
       @else
@@ -53,5 +53,36 @@
       </ul>
       @endif
     </div><!-- /.navbar-collapse -->
+  </div>
+  <div id="setModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Settings</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-signin" action="#" method="POST">
+                  <div class="form-group">
+                    <label for="inputPassword" class="sr-only">Change Password</label>
+                    <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" placeholder="Enter New Password" required autofocus value="{{ old('login_pass')}}" name="login_pass">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="sr-only">Confirm Password</label>
+                    <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required name="password">
+                  </div>
+                  <br>
+                  {{csrf_field()}}
+                  <center><button style="border-radius: 0px;background-color:#FFF;border:1px #DDD solid;color:#444;width:50%" class="btn btn-lg btn-block" type="submit">SAVE</button></center>
+                </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
   </div>
 </nav>

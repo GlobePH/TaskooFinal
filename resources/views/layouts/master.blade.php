@@ -28,5 +28,6 @@
   @include('includes.headers.navigation')
   @yield('content')
   @include('includes.footers.footer')
+  <br /><br />
 </body>
 </html>
