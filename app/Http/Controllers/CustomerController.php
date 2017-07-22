@@ -21,10 +21,22 @@ class CustomerController extends Controller
 		                ]);
 
 		if (Auth::guard('customers')->attempt(['email' => $request['email'], 'password' => $request['password']])) {
-			
+			return redirect('customer/dashboard');
 		}else{
-			die($request['password']);
+			return redirect()->back()->with('invalid','Invalid Login Credentials.');
 		}
+
 		return redirect()->back();
+	}
+
+	public function logout()
+	{
+		Auth::guard('customers')->logout();
+		return redirect('/')->header('Clear-Site-Data','cache','storage','executionContexts');
+	}
+
+	public function getDashboard()
+	{
+		return view('customer.dashboard');
 	}
 }

@@ -34,8 +34,9 @@
 
 
 
+<br /><br />
 
-
+      </div>
 
 
 </div>
@@ -101,7 +102,7 @@
       <form class="form-signin" action="{{ url('customer/login') }}" method="POST">
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
           <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="emailc" id="inputEmail" name="email" class="form-control" placeholder="Email address"  value="{{ old('email')}}">
+          <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"  value="{{ old('email')}}">
         </div>
         @if ($errors->has('email'))
         <span class="help-block">

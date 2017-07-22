@@ -12,15 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	if(Auth::check()){
+
+	}elseif(Auth::guard('customers')->check()){
+		return redirect('customer/dashboard');
+	}
+	return view('welcome');
+
 });
 
 Route::post('customer/login','CustomerController@login' );
 
 Route::get('/getLocation', function () {
-    return view('Location');
+	return view('Location');
 });
 
-Route::get('/master', function(){
-  return view('master');
+Route::group(['middleware' => ['web', 'customers']], function () {
+	Route::get('customer/logout','CustomerController@logout' );
+	Route::get('customer/dashboard','CustomerController@getDashboard' );
+
 });
