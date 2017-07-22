@@ -1,0 +1,95 @@
+html, body {
+    background-color: #fff;
+    color: #AAA;
+    font-family: 'Raleway', sans-serif;
+    margin: 0px auto;
+    font-weight:200;
+}
+/*
+* {
+  border: 1px dashed #282828;
+}
+*/
+
+
+.main {
+  margin: 0px auto;
+}
+.mainQuote {
+  font-size:2.3em;
+}
+
+.mainTheme {
+  font-size:1.3em;
+  text-align:justify;
+}
+
+.workerButton {
+  padding: 1em;
+  border-radius: 0px;
+  background-color: #282828;
+  color:#FFF;
+  margin-right:2em;
+  border: none;
+  width:30em;
+  height:5em;
+  align:center;
+}
+
+.dropdown-menu {
+  position:relative ;
+}
+
+.customerButton {
+  padding: 1em;
+  border-radius: 0px;
+  background-color: #AAA;
+  width:20em;
+  height: 5em;
+  font-size: 3em;
+  margin-left:1em;
+  border-radius:0px;
+}
+
+.logo {
+  width: 5em;
+}
+
+
+
+.mainNav {
+  margin: 0px auto;
+  text-align:center;
+  align:center;
+  float:center;
+}
+
+
+.mainRight{
+
+}
+
+.mainLeft {
+
+  padding-top:1em;
+
+}
+
+
+li > a {
+  color:#636b6f;
+}
+.navbar-alexis {
+  background-color:#fff;
+  padding: 1em;
+
+}
+
+.collapse .navbar-collapse .navbar-ex1-collapse > ul > li > a{
+    background-color: #282828 !important;
+    font-size: 1000px;
+}
+
+.nav-alexis {
+
+}
