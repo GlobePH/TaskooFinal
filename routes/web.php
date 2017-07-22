@@ -12,13 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	if(Auth::check()){
+
+	}elseif(Auth::guard('customers')->check()){
+		return redirect('customer/dashboard');
+	}
+	return view('welcome');
+
 });
 
-Route::get('/homeCustomer', function(){
-  return view('homeCustomer');
+Route::post('customer/login','CustomerController@login' );
+
+Route::get('/getLocation', function () {
+	return view('Location');
 });
 
-Route::get('/homeWorker', function(){
-  return view('homeWorker');
+Route::group(['middleware' => ['web', 'customers']], function () {
+	Route::get('customer/logout','CustomerController@logout' );
+	Route::get('customer/dashboard','CustomerController@getDashboard' );
+
 });

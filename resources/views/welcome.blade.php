@@ -1,108 +1,69 @@
-<!Doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Taskoo</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
-
-<!-- Alexis CSS -->
-<link href="{{asset('css/alexis.css')}}" rel="stylesheet" type="text/css">
-
-<!--Bootstrap? Haha -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    </head>
-
-    <body>
-
-<nav class="navbar navbar-alexis">
-<div class="container main">
-
-  <div class="row">
-
-
-
-
-
-
-  <div class="navbar-header" align="center">
-    <center><img class="img-responsive logo" src="{{asset('img/welder.png')}}" ><strong>TASKOO</strong></center>
-  </div>
-    <ul class="nav navbar-nav nav-alexis" align="center">
-      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;</a></li>
-      <li><a href="#">ABOUT&nbsp;&nbsp;</a></li>
-      <li><a href="#thirdPage">WORKER&nbsp;&nbsp;</a></li>
-      <li><a href="#fourthPage">CUSTOMER&nbsp;&nbsp;</a></li>
-    </ul>
-
-
-
-
-
-</div>
-</div>
-</nav>
-<div class="container main">
+@section('content')
 <div class="container firstPage">
-
-
   <div class="row">
     <center><p class="mainQuote">Making the Unemployed Productive and Useful to the Community!</p></center>
     <br /><br /><br />
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 "><center>
-<img class="mainRight" src="{{asset('img/worker.png')}}" width="150em">
-<img class="mainRight" src="{{asset('img/electrician.png')}}" width="150em">
-<img class="mainRight" src="{{asset('img/mechanic.png')}}" width="150em">
-</center>
-<br />
-      <br />
-      <p class="mainTheme"><strong>Taskoo</strong> is a web and mobile app that helps two people. First, the unemployed user who wants to be productive and earn money. Second, the customer user who wants to avail a certain job. By using this app, unemployed people won't be a headache for our economy anymore but a useful element for the success of the society.</p>
+      <img class="mainRight" src="{{asset('img/worker.png')}}" width="150em">
+      <img class="mainRight" src="{{asset('img/electrician.png')}}" width="150em">
+      <img class="mainRight" src="{{asset('img/mechanic.png')}}" width="150em">
+    </center>
+    <br />
+    <br />
+    <p class="mainTheme"><strong>Taskoo</strong> is a web and mobile app that helps two people. First, the unemployed user who wants to be productive and earn money. Second, the customer user who wants to avail a certain job. By using this app, unemployed people won't be a headache for our economy anymore but a useful element for the success of the society.</p>
 
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mainLeft">
-
-      <center><img class="mainRight" src="{{asset('img/start.png')}}" width="80em"></center>
-
-
-      <center><p class="mainQuote">START NOW!</p></center>
-
-
-
-<center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#thirdPage"><button class="workerButton" type="button" align="center"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;&nbsp;&nbsp;WORKER</button></a></center><br />
-<center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#fourthPage"><button class="workerButton" type="button" align="center"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;&nbsp;CUSTOMER</button></a></center>
-    </div>
   </div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mainLeft">
 
+    <center><img class="mainRight" src="{{asset('img/start.png')}}" width="80em"></center>
+
+
+    <center><p class="mainQuote">START NOW!</p></center>
+
+
+
+    <center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#thirdPage"><button class="workerButton" type="button" align="center"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;&nbsp;&nbsp;WORKER</button></a></center><br />
+    <center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#fourthPage"><button class="workerButton" type="button" align="center"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;&nbsp;CUSTOMER</button></a></center>
+  </div>
+</div>
+</div class="row">
 <br /><br />
 
-      </div>
-<br /><br /><br /><br /><br /><br /><br /><br />
-<!--Second Page -->
-<div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">1</div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">2</div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">3</div>
+
+<br /><br /><br /><br />
 </div>
-<!--Last Second Page -->
+
+
+
+
+<!--Fourth -->
+<div class="container" id="secondPage">
+
+  <center><p class="mainQuote">Choose your Helper!</p></center>
+  <em><center>"These are the people nearby you inside the app that can help you in their simple needs!"</center></em><br /><br />
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/wrench.png')}}" width="150em"><center><strong>Mechanic</strong></center><p class="text-justify">Can work with appliances, automobile, and even your bike!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/hammer.png')}}" width="150em"><center><strong>Carpenter</strong></center><p class="text-justify">He build walls, roofs, doors, or even your whole house!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/bolt.png')}}" width="150em"><center><strong>Electrician</strong></center><p class="text-justify">Fixes electrical problems such as wirings, switches or even your phone charger!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/plumbering.png')}}" width="150em"><center><strong>Plumber</strong></center><p class="text-justify">He is the one doing the dirty work such as clogged toilets, cleaning pipes and more!</p></div>
+  </div>
+  <div class="row">
+    <br />
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/coding.png')}}" width="150em"><center><strong>Programmer</strong></center><p class="text-justify">Can create any program or application depending on your needs!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/tutorial.png')}}" width="150em"><center><strong>Tutor</strong></center><p class="text-justify">They teach different subject matter based on what you want to learn!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/broom.png')}}" width="150em"><center><strong>House Helper</strong></center><p class="text-justify">Need a help with in your household like cleaning, cooking, or washing of clothes? They're here just for you!</p></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 helper" align="center"><img src="{{asset('img/typewriter.png')}}" width="150em"><center><strong>Encoder</strong></center><p class="text-justify">They are your type...ist! They can encode your records on different microsoft office applications!"</p></div>
+  </div>
+</div>
 
 <!--Third Page Worker-->
 <br /><br /><br /><br /><br /><br /><br /><br />
       <div class="container" id="thirdPage">
         <div class="row">
           <p class="mainQuote" align="center">For Workers!</p>
-          <small><em><center>"Simple work that can make you productive and let you earn money at the same time while seeking a stable job."</center></em></small><br /><br />
+          <em><center>"Simple work that can make you productive and let you earn money at the same time while seeking a stable job."</center></em><br /><br />
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <p class="mainQuote" align="center">LOGIN</p>
             <form class="form-signin" action="#" method="POST">
@@ -129,12 +90,14 @@
             <form class="form-signin" action="#" method="POST" enctype="multipart/form-data">
               <label for="inputEmail" class="sr-only">Email</label>
               <input type="text" id="inputEmail" class="form-control" style="border-radius: 0px;" placeholder="Email" required autofocus value="{{ old('first_name')}}" name="email"><br>
+
             <label for="inputFirstName" class="sr-only">First Name</label>
-            <input type="text" id="inputFirstName" class="form-control"  style="border-radius: 0px;" placeholder="First Name" required autofocus value="{{ old('first_name')}}" name="first_name"><br>
+            <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" required  value="{{ old('first_name')}}" name="first_name"><br>
             <label for="inputUsername" class="sr-only">Last Name</label>
-            <input type="text" id="Last Name" class="form-control" style="border-radius: 0px;" placeholder="Last Name" required value="{{ old('last_name')}}" name="last_name"><br>
+            <input type="text" id="Last Name" class="form-control" placeholder="Last Name" required value="{{ old('last_name')}}" name="last_name"><br>
             <label for="inputContactNo" class="sr-only">Contact Number</label>
             <input type="number" id="inputContactNo" class="form-control" style="border-radius: 0px;" placeholder="Contact Number (90********)" maxlength="10" required name="contact_no"><br>
+
             <label for="choosePriSkill">Primary Skill:</label>
             <select>
   <option value="Mechanic">Mechanic</option>
@@ -216,9 +179,13 @@
             </div>
           </div>
           <br /><br />
-        </div>
-  <!--End of Fourth-->
 
+        </div>
+      </div>
+      <br /><br />
+    </div>
+    <!--End of Fourth-->
+  </div>
 </div>
-    </body>
-</html>
+</div>
+@endsection
