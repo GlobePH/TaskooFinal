@@ -14,8 +14,9 @@ html, body {
   border-right: 1px solid #DDD;
   height: 50em;
   font-size:1.5em;
-
 }
+
+
 
 .homeSidebar > a > div {
   padding:.5em;
@@ -82,6 +83,10 @@ html, body {
 
   padding-top:1em;
 
+}
+
+.tooltip {
+  width: 15em;
 }
 
 a > div {
