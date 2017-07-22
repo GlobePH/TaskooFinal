@@ -24,13 +24,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <center><img class="img-responsive logo" src="{{asset('img/welder.png')}}" ><strong>TASKOO</strong></center>
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <img class=" logo" src="{{asset('img/networking.png')}}" width="150em">
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+      <span class="logoFont">Taskoo</span>
+        </div>
+      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       @if(Auth::check())
-      
+
       @elseif(Auth::guard('customers')->check())
       <ul class="nav navbar-nav navbar-right" align="center">
         <li><a href="#">HOME</a></li>

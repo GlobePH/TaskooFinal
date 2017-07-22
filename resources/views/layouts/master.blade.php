@@ -9,6 +9,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
   <!-- Alexis CSS -->
   <link href="{{ asset('css/alexis.css') }}" rel="stylesheet" type="text/css">
