@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('customer/login','CustomerController@login' );
+
 Route::get('/getLocation', function () {
     return view('Location');
+});
+
+Route::get('/master', function(){
+  return view('master');
 });

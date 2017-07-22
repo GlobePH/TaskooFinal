@@ -77,7 +77,7 @@ return [
         ],
 
         'customers' => [
-            'driver' => 'database',
+            'driver' => 'eloquent',
             'model' => App\Customer::class,
         ],
 

@@ -1,0 +1,38 @@
+*{
+	font-family: 'Raleway', sans-serif;
+}
+
+input[type='text'], input[type='password'], input[type='email']{
+	border-radius: 0px;
+}
+.flat{
+	border-radius: 0 !important;
+}
+
+.alert-danger{
+	background-color: #c0392b !important;
+	color: #fff !important;
+	border-color: #c0392b !important;
+	border-radius: 0;
+}
+
+.alert-success{
+	background-color: #27ae60!important;
+	color: #fff!important;
+	border-color: #27ae60!important;
+	border-radius: 0;
+}
+
+.alert-warning{
+	background-color: #e67e22!important;
+	color: #fff!important;
+	border-color: #e67e22!important;
+	border-radius: 0;
+}
+
+.alert-info{
+	background-color: #2980b9!important;
+	color: #fff !important;
+	border-color: #2980b9 !important;
+	border-radius: 0;
+}
