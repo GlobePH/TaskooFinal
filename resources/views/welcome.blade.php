@@ -32,14 +32,23 @@
 <br /><br />
 
 
+<br /><br />
+</div>
+<!--Second Page -->
 <br /><br /><br /><br />
+<div class="container" id="secondPage">
+<br /><br />
+  <center><p class="mainQuote">Help Someone and Earn with Simple Work!</p></center>
+  <em><center>"Unemployed Filipinos are not a nuisance anymore but a big help!"</center></em><br /><br />
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " align="center"><img src="{{asset('img/lazy.png')}}"></div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 "><h3>Be Productive and Useful!</h3><p class="text-justify" style="padding-right:7em;">Effect? Great decrease of headache caused by most unemployed Filipinos like staying on bed whole day, browsing social media all day, drugs and alcohol, criminal activities and so much more. Turning them into a productive and useful persons while earning money at the same time, hunting for a stable job is a REVOLUTION!</p></div>
+  </div>
 </div>
 
-
-
-
-<!--Fourth -->
-<div class="container" id="secondPage">
+<br /><br /><br /><br /><br /><br /><br /><br />
+<!--Third Page -->
+<div class="container" id="thirdPage">
 
   <center><p class="mainQuote">Choose your Helper!</p></center>
   <em><center>"These are the people nearby you inside the app that can help you in their simple needs!"</center></em><br /><br />

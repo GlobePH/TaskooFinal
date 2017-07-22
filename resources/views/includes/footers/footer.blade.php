@@ -20,6 +20,10 @@ $(document).ready(function(){
 		$(".js-example-basic-multiple").select2();
 		$(".js-example-basic-single").select2();
 	</script>
+	<!--Scroll to Top -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow78.js"></script>
+	
 
 	@if(Auth::check())
 	<script type="text/javascript" src="{{ asset('js/controller/workerController.js')}}"></script>
@@ -28,4 +32,3 @@ $(document).ready(function(){
 	@else
 	<script type="text/javascript" src="{{ asset('js/getLocation.js') }}"></script>
 	@endif
-

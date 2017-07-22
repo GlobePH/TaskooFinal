@@ -21,13 +21,13 @@ html, body {
 }
 
 .helper {
-  border: 1px solid #444;
+  border: 1px solid #DDD;
   padding:1em;
   height:18em;
 }
 
 .helper:hover {
-  background-color: #444;
+  background-color: #DDD;
 }
 
 .homeSidebar > a > div {
@@ -54,7 +54,7 @@ html, body {
   background-color: #FFF;
   color:#000;
   margin-right:2em;
-  border:1px solid #444;
+  border:1px solid #AAA;
   width:30em;
   height:5em;
   align:center;

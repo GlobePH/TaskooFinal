@@ -52,9 +52,9 @@
       @else
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">WORKER</a></li>
-        <li><a href="#">CUSTOMER</a></li>
+        <li><a href="#secondPage">WORKER</a></li>
+        <li><a href="#thirdPage">CUSTOMER</a></li>
+
       </ul>
       @endif
     </div><!-- /.navbar-collapse -->
