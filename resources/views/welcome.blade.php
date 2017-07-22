@@ -43,8 +43,8 @@
     <ul class="nav navbar-nav nav-alexis" align="center">
       <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;</a></li>
       <li><a href="#">ABOUT&nbsp;&nbsp;</a></li>
-      <li><a href="#">WORKER&nbsp;&nbsp;</a></li>
-      <li><a href="#">CUSTOMER&nbsp;&nbsp;</a></li>
+      <li><a href="#thirdPage">WORKER&nbsp;&nbsp;</a></li>
+      <li><a href="#fourthPage">CUSTOMER&nbsp;&nbsp;</a></li>
     </ul>
 
 
@@ -84,23 +84,12 @@
 <center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#fourthPage"><button class="workerButton" type="button" align="center"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;&nbsp;CUSTOMER</button></a></center>
     </div>
   </div>
-</div class="row">
+
 <br /><br />
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
 
-
-
-
-
-
-
-  </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-
-
-
- </div>
       </div>
+
+
 <!--Third Page Worker-->
 <br /><br /><br /><br /><br /><br /><br /><br />
       <div class="container" id="thirdPage">
@@ -191,8 +180,7 @@
           <br /><br />
         </div>
   <!--End of Fourth-->
-    </div>
-</div>
-</div>
+  
+
     </body>
 </html>
