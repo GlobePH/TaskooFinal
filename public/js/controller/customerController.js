@@ -13,6 +13,7 @@ $(document).ready(function(){
 	GMaps.geolocate({
 		success: function(position) {
 			mapObj.setCenter(position.coords.latitude, position.coords.longitude);
+			getFormattedAddress(position.coords.latitude, position.coords.longitude);
 			console.log('lat:' + position.coords.latitude + " lng:" + position.coords.longitude)
 			$('#currentLatLng').html(position.coords.latitude + ", " + position.coords.longitude);
 			$('#loaderLatLng').hide();
@@ -43,7 +44,6 @@ $(document).ready(function(){
 					alert('You are inside 300m radius of Stonehenge')
 				}
 			});
-			getFormattedAddress(position.coords.latitude, position.coords.longitude);
 		},
 		error: function(error) {
 			alert('Geolocation failed: ' + error.message);
@@ -165,4 +165,36 @@ function getDistance(fromLat, fromLng, toLat, toLng){
 		console.log(value)
 
 	}
+}
+
+function mapData(type) {
+	
+	$.post(urlCompanyFullThread+'/'+report_id, send )
+                   .done(function(data){
+                        if (data !== 'invalid') {
+                            alertify.success("<i class='fa fa-envelope'></i> Message Sent.");
+
+                            if (data.account === 'hacker') {
+                                path = 'ranks';
+                            }else if (data.account === 'company'){
+                                path = 'companies';
+                            }else{
+                                path = 'platform_icons';
+                            }
+
+                            var infoResponse =    '<div class="message-item" id="m16">';
+                            infoResponse +=    '<div class="message-inner"><div class="message-head clearfix"><div class="avatar pull-left"><a href="#"><img class="mini" src="'+imgUrl+'/'+path+'/'+data.pic+'"></a></div>';
+                            infoResponse +=    '<div class="user-detail"><a href="'+url+'/'+data.account+'/profile/'+data.id+'"><h5 class="handle">'+data.name+'</h5></a><div class="post-meta"><div class="asker-meta">';
+                            infoResponse +=    '<span class="qa-message-when"><span class="qa-message-when-data">'+data.created_at.date+'</span>';
+                            infoResponse +=    '</span></div></div></div></div><div class="qa-message-content"><pre>'+data.message+'</pre></div></div></div>';
+                            $('#wallmessages').append(infoResponse);
+                            $('textarea#company_reply').val('');
+
+                        }else{
+                            alertify.error('Invalid Requestsdf');
+                        }
+                    })
+                    .fail(function(){
+                        alert('Ajax Submit Failed ...');
+                    });
 }

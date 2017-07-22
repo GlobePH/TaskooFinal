@@ -30,7 +30,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       @if(Auth::check())
-      
+      <ul class="nav navbar-nav navbar-right" align="center">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">SETTINGS</a></li>
+        <li><a href="{{ url('worker/logout') }}">LOGOUT</a></li>
+      </ul>
       @elseif(Auth::guard('customers')->check())
       <ul class="nav navbar-nav navbar-right" align="center">
         <li><a href="#">HOME</a></li>
@@ -39,7 +43,7 @@
       </ul>
       @else
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">HOME</a></li>
+        <li><a href="#">HOME</a></li>
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">WORKER</a></li>
         <li><a href="#">CUSTOMER</a></li>

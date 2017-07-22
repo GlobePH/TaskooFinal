@@ -11,12 +11,12 @@ class WorkerProfile extends Model
     
     public function primaryService()
     {
-    	return $this->hasOne('App\Services');
+    	return $this->hasOne('App\Skills');
     }
 
     public function secondaryService()
     {
-    	return $this->hasMany('App\Services');
+    	return $this->hasMany('App\SecondarySkills');
     }
 
 }

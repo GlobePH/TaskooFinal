@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 	if(Auth::check()){
-
+		return redirect('worker/dashboard');
 	}elseif(Auth::guard('customers')->check()){
 		return redirect('customer/dashboard');
 	}
@@ -22,11 +22,27 @@ Route::get('/', function () {
 });
 
 Route::post('customer/login','CustomerController@login' );
+Route::post('customer/register','CustomerController@postRegister' );
+
+Route::post('worker/login','WorkerController@login' );
+Route::post('worker/register','WorkerController@postRegister' );
 
 Route::get('/getLocation', function () {
 	return view('Location');
 });
 
+Route::get('worker/new', function () {
+	return view('worker.index');
+});
+Route::get('customer/new', function () {
+	return view('customer.index');
+});
+
+Route::group(['middleware' => ['web']], function () {
+	Route::get('worker/logout','WorkerController@logout' );
+	Route::get('worker/dashboard','WorkerController@getDashboard' );
+
+});
 Route::group(['middleware' => ['web', 'customers']], function () {
 	Route::get('customer/logout','CustomerController@logout' );
 	Route::get('customer/dashboard','CustomerController@getDashboard' );
