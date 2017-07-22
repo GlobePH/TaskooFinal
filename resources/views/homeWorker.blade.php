@@ -55,6 +55,12 @@
       <div class="row"align="center">XP: <strong>100</strong></div>
       <div class="row"align="center">Skill: <strong>Mechanic</strong></div>
       <div class="row"align="center"><img src="{{asset('img/rank/rook.png')}}" width="30em">&nbsp;&nbsp;Rank: <strong>Average</strong></div>
+
+      <br />
+      <br />
+      <div class="row"align="center">Secondary Skills:<br />
+        <img src="{{asset('img/rank/knight.png')}}" width="30em" align="center">&nbsp;&nbsp;<strong>Programmer</strong><br />
+        <img src="{{asset('img/rank/knight.png')}}" width="30em" align="center">&nbsp;&nbsp;<strong>Electrician</strong></div>
     </div>
     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 geoMap">Input here the Geomapping</div>
   </div>
