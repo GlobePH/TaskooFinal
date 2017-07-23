@@ -36,14 +36,5 @@
   </div>
 </div>
 
-<<<<<<< HEAD:resources/views/home.blade.php
+
 @endsection
-=======
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
-</body>
-</html>
->>>>>>> e0a0263af7cb6c7db461a0290ab066b7255ec10d:resources/views/homeCustomer.blade.php

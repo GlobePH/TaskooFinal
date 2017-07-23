@@ -9,4 +9,5 @@ class Location extends Model
     
     protected $table = 'worker_location';
 
+    
 }

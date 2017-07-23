@@ -9,6 +9,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
   <!-- Alexis CSS -->
   <link href="{{ asset('css/alexis.css') }}" rel="stylesheet" type="text/css">
@@ -22,6 +23,7 @@
   <!-- Google Maps JS API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfPuh1ktG-4McBM_1_L1rQkRg6cMOgJVE"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
   
   @yield('css')
 </head>
@@ -30,5 +32,6 @@
   @include('includes.headers.navigation')
   @yield('content')
   @include('includes.footers.footer')
+  <br /><br />
 </body>
 </html>

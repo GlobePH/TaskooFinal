@@ -1,6 +1,6 @@
 html, body {
     background-color: #fff;
-    color: #AAA;
+    color: #000;
     font-family: 'Raleway', sans-serif;
     margin: 0px auto;
     font-weight:200;
@@ -15,7 +15,20 @@ html, body {
   font-size:1.5em;
 }
 
+.logoFont {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 3em !important;
+}
 
+.helper {
+  border: 1px solid #DDD;
+  padding:1em;
+  height:18em;
+}
+
+.helper:hover {
+  background-color: #DDD;
+}
 
 .homeSidebar > a > div {
   padding:.5em;
@@ -26,18 +39,20 @@ html, body {
 }
 .mainQuote {
   font-size:2.3em;
+  color:#000;
 }
 
 .mainTheme {
   font-size:1.3em;
   text-align:justify;
+  color:#000;
 }
 
 .workerButton {
   padding: 1em;
   border-radius: 0px;
   background-color: #FFF;
-  color:#444;
+  color:#000;
   margin-right:2em;
   border:1px solid #DDD;
   width:30em;
@@ -92,10 +107,18 @@ html, body {
 .tooltip {
   width: 15em;
 }
-
+nav > .navbar {
+  border-bottom:1px solid #DDD;
+}
 a > div {
   text-decoration:none;
-  color:#282828;
+  color:#000;
+}
+
+a > div:hover {
+  text-decoration: none;
+  background-color: #ddd;
+  color:#000;
 }
 
 .homeSidebar > a > div:hover{
@@ -104,12 +127,17 @@ a > div {
   color:#FFF;
 }
 li > a {
-  color:#636b6f;
+  color:#000;
 }
 .navbar-alexis {
   background-color:#fff;
   padding: 1em;
 
+}
+
+button[type="submit"]:hover {
+  background-color: #DDD;
+  color:#000;
 }
 
 .collapse .navbar-collapse .navbar-ex1-collapse > ul > li > a{
