@@ -18,7 +18,7 @@
         </div>
         <br>
         {{csrf_field()}}
-        <button style="border-radius: 0px;background-color:#FFF;border:1px #DDD solid;color:#444;" class="btn btn-lg btn-block" type="submit">LOGIN</button>
+        <button class="btn btn-lg btn-block btn-primary flat" type="submit">LOGIN</button>
       </form>
       <br />
       <div class="row">
@@ -117,7 +117,7 @@
         </div>
         {{ csrf_field() }}
       </div><br />
-      <button style="border-radius: 0px;background-color:#FFF;border:1px #DDD solid;color:#444;" class="btn btn-lg btn-block btn-primary"  type="submit">Continue</button>
+      <button class="btn btn-lg btn-block btn-primary flat"  type="submit">Continue</button>
     </form>
 
     <br><br>

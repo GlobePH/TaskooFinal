@@ -8,22 +8,25 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-<!-- tooltip -->
-<script>
-$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip();
-});
-</script>
+	<!-- tooltip -->
+	<script>
+	$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();
+	});
+	</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$(".js-example-basic-multiple").select2();
-		$(".js-example-basic-single").select2();
+
 	</script>
 	<!--Scroll to Top -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow78.js"></script>
-	
+
+
+	</script>
 
 	@if(Auth::check())
 	<script type="text/javascript" src="{{ asset('js/controller/workerController.js')}}"></script>

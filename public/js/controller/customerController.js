@@ -1,9 +1,10 @@
+var mapObj;
 $(document).ready(function(){
 	var latitude;
 	var longitude;
 	var currentLocation;
 
-	var mapObj = new GMaps({
+	mapObj = new GMaps({
 		el: '#map',
 		lat: 48.857,
 		lng: 2.295,
@@ -176,33 +177,65 @@ function getDistance(fromLat, fromLng, toLat, toLng){
 
 
 function mapData(type) {
+	mapObj.removeMarkers();
+	var urlSearch = url + 'customer/search/' + type;
+	$.post(urlSearch, {_token:token})
+	.done(function(data){
+		if(data != ""){
+			// swal("Your lucky!", "Someones offering this kind of service here :)", "success")
+			$.each(data,function(thread,details){
+				var icon;
+				if(details.profile.rank == 'crown'){
+					icon = 'https://image.flaticon.com/icons/png/32/178/178022.png';
+				}else if(details.profile.rank == 'knight'){
+					icon = 'https://image.flaticon.com/icons/png/32/196/196176.png';
+				}else{
+					icon = 'https://image.flaticon.com/icons/png/32/196/196180.png';
+				}
 
-	$.post(urlCompanyFullThread+'/'+report_id, send )
-                   .done(function(data){
-                        if (data !== 'invalid') {
-                            alertify.success("<i class='fa fa-envelope'></i> Message Sent.");
+				mapObj.addMarker({
+					lat: details.location.latitude,
+					lng: details.location.longitude,
+					icon: icon,
+					infoWindow: {
+						content: '<center><h4>'+ details.worker.first_name + " " + details.worker.last_name +'</h4></center><div><center><button type="button" class="btn btn-info flat" data-toggle="modal" data-target="#myModal">View Profile</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onClick="hireWorker(\''+ details.worker.id + "','" +details.worker.first_name +'\')" class="btn  btn-success flat" >Hire '+details.worker.first_name +'</button></center></div>',
+						width: 550
+					},
+					mouseover: function(){
+						this.infoWindow.open();
+					},
+					mouseover: function(e) {
+						getDistance(14.5498,121.0552,14.5534,121.0547);
+					}
+				});
+			});
+		}
 
-                            if (data.account === 'hacker') {
-                                path = 'ranks';
-                            }else if (data.account === 'company'){
-                                path = 'companies';
-                            }else{
-                                path = 'platform_icons';
-                            }
 
-                            var infoResponse =    '<div class="message-item" id="m16">';
-                            infoResponse +=    '<div class="message-inner"><div class="message-head clearfix"><div class="avatar pull-left"><a href="#"><img class="mini" src="'+imgUrl+'/'+path+'/'+data.pic+'"></a></div>';
-                            infoResponse +=    '<div class="user-detail"><a href="'+url+'/'+data.account+'/profile/'+data.id+'"><h5 class="handle">'+data.name+'</h5></a><div class="post-meta"><div class="asker-meta">';
-                            infoResponse +=    '<span class="qa-message-when"><span class="qa-message-when-data">'+data.created_at.date+'</span>';
-                            infoResponse +=    '</span></div></div></div></div><div class="qa-message-content"><pre>'+data.message+'</pre></div></div></div>';
-                            $('#wallmessages').append(infoResponse);
-                            $('textarea#company_reply').val('');
+	})
+	.fail(function(){
+		console.log("Error ..");
+	});
+}
 
-                        }else{
-                            alertify.error('Invalid Requestsdf');
-                        }
-                    })
-                    .fail(function(){
-                        alert('Ajax Submit Failed ...');
-                    });
+function hireWorker(id,name){
+	swal({
+		title: "Are you sure?",
+		text: "Do you want to hire " + name + "?",
+		type: "info",
+		showCancelButton: true,
+		confirmButtonClass: "success",
+		confirmButtonText: "Yes, send also a message.",
+		closeOnConfirm: false
+	},
+	function(){
+		var urlSendMessage = url + 'customer/notify/' + id;
+		$.post(urlSendMessage, {_token:token})
+		.done(function(data){
+			swal("Notified!", name + " was notified. Please wait for the worker\'s reply. Thank you!", "success");
+		})
+		.fail(function(){
+			swal("Ooooops!", name + " was not notified. Please try again later.", "error");
+		});
+	});
 }

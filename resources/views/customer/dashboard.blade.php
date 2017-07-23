@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 homeSidebar">
       <br /><br />
-
+          {{csrf_field()}}
       <a onclick="mapData('Mechanic')"><div class="row"><img src="{{asset('img/wrench.png')}}" width="30em">&nbsp;&nbsp;Mechanic</div></a>
       <a onclick="mapData('Carpenter')"><div class="row"><img src="{{asset('img/hammer.png')}}" width="30em">&nbsp;&nbsp;Carpenter</div></a>
       <a onclick="mapData('Electrician')"><div class="row"><img src="{{asset('img/bolt.png')}}" width="30em">&nbsp;&nbsp;Electrician</div></a>

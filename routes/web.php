@@ -31,6 +31,7 @@ Route::get('/getLocation', function () {
 	return view('Location');
 });
 
+
 Route::get('worker/new', function () {
 	return view('worker.index');
 });
@@ -47,5 +48,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => ['web', 'customers']], function () {
 	Route::get('customer/logout','CustomerController@logout' );
 	Route::get('customer/dashboard','CustomerController@getDashboard' );
+	Route::post('customer/search/{type}','CustomerController@getWorkers' );
+	Route::get('customer/notify/{id}','CustomerController@notifyWorker' );
+	Route::get('customer/send/sms','CustomerController@sendSMS' );
 
 });

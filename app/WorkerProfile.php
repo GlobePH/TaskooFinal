@@ -14,9 +14,19 @@ class WorkerProfile extends Model
     	return $this->hasOne('App\Skills');
     }
 
+    public function worker()
+    {
+    	return $this->belongsTo('App\Worker', 'id');
+    }
+
     public function secondaryService()
     {
     	return $this->hasMany('App\SecondarySkills');
+    }
+
+    public function location()
+    {
+    	return $this->belongsTo('App\Location', 'id');
     }
 
 }

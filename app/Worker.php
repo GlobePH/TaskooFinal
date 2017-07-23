@@ -15,4 +15,9 @@ class Worker extends Authenticatable
     	return $this->hasOne('App\WorkerProfile');
     }
 
+    public function location()
+    {
+    	return $this->belongsTo('App\Location', 'id');
+    }
+
 }

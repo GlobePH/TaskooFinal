@@ -67,7 +67,54 @@
   </div>
 </div>
 
+<br /><br /><br /><br /><br /><br /><br /><br />
+<!--Third Page -->
+<div class="container" id="fourthPage">
+
+  <center><p class="mainQuote">Hire our Beloved Workers!</p></center>
+  <em><center>"Hands-on experience is greater than theory for it will last longer than ever."</center></em><br /><br />
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2"><strong>Rank Number</strong></div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5"><strong>Full Name</strong></div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3"><strong>Primary Skill</strong></div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2"><strong>Number of XP</strong></div>
+  </div>
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2">Rank #1</div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5">Alexis Lingad</div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3">Mechanic</div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2">100</div>
+  </div>
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2">Rank #2</div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5">Anjo Tuban</div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3">Encoder</div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2">95</div>
+  </div>
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2">Rank #3</div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5">Damien Magdangal</div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3">Electrician</div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2">80</div>
+  </div>
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2">Rank #4</div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5">Val Trinidad</div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3">Plumber</div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2">50</div>
+  </div>
+  <div class="row ranking">
+    <div class="rankNum col-xs-2 col-sm-2 col-md-2 col-lg-2">Rank #5</div>
+    <div class="fullName col-xs-5 col-sm-5 col-md-5 col-lg-5">Eve Austria Laude</div>
+    <div class="priSkill col-xs-3 col-sm-3 col-md-3 col-lg-3">House Helper</div>
+    <div class="numXP col-xs-2 col-sm-2 col-md-2 col-lg-2">30</div>
+  </div>
+<br /><br /><br /><br /><br /><br /><br /><br />
 </div>
+
+</div></div>
+
+
 
 
 @endsection
