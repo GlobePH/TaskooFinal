@@ -21,7 +21,7 @@ class WorkerProfile extends Model
 
     public function secondaryService()
     {
-    	return $this->hasMany('App\SecondarySkills');
+    	return $this->hasMany('App\SecondarySkills', 'worker_id');
     }
 
     public function location()

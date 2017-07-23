@@ -7,6 +7,7 @@ use App\Worker;
 use App\WorkerProfile;
 use App\SecondarySkills;
 use App\Location;
+use App\Transactions;
 use Auth;
 use File;
 use Carbon\Carbon;
@@ -55,9 +56,29 @@ class WorkerController extends Controller
 
 		$worker->save();
 
+		$pic = "";
+		if($primary == 'Mechanic'){
+			$pic = 'wrench.png';
+		}else if($primary == 'Carpenter'){
+			$pic = 'hammer.png';
+		}else if($primary == 'Electrcian'){
+			$pic = 'bolt.png';
+		}else if($primary == 'Programmer'){
+			$pic = 'coding.png';
+		}else if($primary == 'Tutor'){
+			$pic = 'tutorial.png';
+		}else if($primary == 'House Keeper'){
+			$pic = 'broom.png';
+		}else if($primary == 'Plumber'){
+			$pic = 'plumbering.png';
+		}else if($primary == 'Encoder'){
+			$pic = 'typewriter.png';
+		}
+
 		$profile = new WorkerProfile;
 
 		$profile->complete_address = $address;
+		$profile->prof_pic = $pic;
 		$profile->rank_pic = $rank.'.png';
 		$profile->rank = $rank;
 		$profile->primary_skill = $primary;
@@ -88,7 +109,12 @@ class WorkerController extends Controller
 		$location->updated_at = Carbon::now();
 
 		$location->save();
-		return view('responses.success_register')->with('user', 'worker');
+		if (Auth::attempt(['email' => $email, 'password' => $password])) {
+			return view('responses.success_register')->with('user', 'worker');
+		}else{
+			return redirect()->back()->with('invalid','Invalid Login Credentials.');
+		}
+		
 		
 	}
 
@@ -117,7 +143,35 @@ class WorkerController extends Controller
 
 	public function getDashboard()
 	{
-		return view('worker.dashboard');
+		$confirms = Transactions::where('worker_id', Auth::user()->id)->where('status', 'Finished')->where('w_accepted', '0')->where('c_accepted', '1')->get();
+		$pendings = Transactions::where('worker_id', Auth::user()->id)->where('status', 'Pending')->get();
+		$ongoings = Transactions::where('worker_id', Auth::user()->id)->where('status', 'Active')->get();
+		$previous = Transactions::where('worker_id', Auth::user()->id)->where('status', 'Finished')->where('c_accepted', '1')->where('w_accepted', '1')->get();
+
+		return view('worker.dashboard')->with(['confirms' => $confirms, 'pendings' => $pendings, 'ongoings' => $ongoings, 'previous' => $previous]);
+	}
+
+	public function moveToFinish(Request $request)
+	{
+
+		$transaction = Transactions::find($request['id']);
+
+		// die($transaction);
+		if($transaction->amount != 0){
+			$transaction->w_accepted = '1';
+			$transaction->save();
+
+			if($transaction->c_accepted == 1 && $transaction->w_accepted == 1){
+				$profile = WorkerProfile::find(Auth::user()->id);
+				$profile->xp = $profile->xp + $transaction->remarks;
+				$profile->save();
+
+				return $profile;
+			}	
+
+		// return $transaction;		
+		}
+
 	}
 
 }

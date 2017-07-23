@@ -39,14 +39,13 @@
       @if(Auth::check())
       <ul class="nav navbar-nav navbar-right" align="center">
         <li><a href="#">HOME</a></li>
-        <li><a href="#">ACTIVITIES</a></li>
         <li><a href="#">SETTINGS</a></li>
         <li><a href="{{ url('worker/logout') }}">LOGOUT</a></li>
       </ul>
       @elseif(Auth::guard('customers')->check())
       <ul class="nav navbar-nav navbar-right" align="center">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">ACTIVITIES</a></li>
+        <li><a href="{{ url('/') }}">HOME</a></li>
+        <li><a href="{{ url('customer/activities') }}">ACTIVITIES</a></li>
         <li><a href="#" data-toggle="modal" data-target="#setModal">SETTINGS</a></li>
         <li><a href="{{ url('customer/logout') }}">LOGOUT</a></li>
       </ul>

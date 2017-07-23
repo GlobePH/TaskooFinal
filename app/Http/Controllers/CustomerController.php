@@ -9,9 +9,11 @@ use App\Customer;
 use App\Worker;
 use App\WorkerProfile;
 use App\SecondarySkills;
+use App\Transactions;
 use Auth;
 use Carbon\Carbon;
 use Borla\Chikka\Chikka;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -99,8 +101,12 @@ class CustomerController extends Controller
 	}
 
 	public function getWorkers($type)
-	{
-		$workers =WorkerProfile::where('primary_skill', $type)->get();
+	{	
+		if($type == 'ALL'){
+			$workers =WorkerProfile::get();
+		}else{
+			$workers =WorkerProfile::where('primary_skill', $type)->get();
+		}
 
 		$data = array ();
 		foreach ($workers as $key => $profile) {
@@ -122,10 +128,24 @@ class CustomerController extends Controller
 	{
 		$worker = Worker::find($id);
 
-		echo $worker;
+		$transaction = new Transactions;
+
+		$transaction->customer_id = Auth::guard('customers')->user()->id;
+		$transaction->worker_id = $worker->id;
+		$transaction->service_type = $worker->profile->primary_skill;
+		$transaction->amount = '0';
+		$transaction->status = 'Pending';
+		$transaction->created_at = Carbon::now();
+		$transaction->updated_at = Carbon::now();
+
+		$transaction->save();
+
+		$this->sendSMS($worker->id);
+		return $worker;
+
 	}
 
-	public function sendSMS(){
+	public function sendSMS($id){
 		// Set configuration
 		$config = [
 		    // Shortcode to use
@@ -139,12 +159,12 @@ class CustomerController extends Controller
 		// Create Chikka object
 		$chikka = new Chikka($config);
 
-		$worker = Worker::find(2);
+		$worker = Worker::find($id);
 		$customer = Customer::where('id', Auth::guard('customers')->user()->id)->first();
 
 		// die(print_r($worker));
 		$messageBody = "Hi ". $worker->first_name. "! This is ". $customer->first_name.". I saw your profile at Taskoo and picked you as the person that will do a job for me. Please reply ASAP at ". $customer->mobile_number."  for more details. Thank you!";
-		
+
 		// die(print($messageBody));
 		// Mobile number of receiver and message to send
 		$mobile = $worker->mobile_number;
@@ -153,5 +173,64 @@ class CustomerController extends Controller
 		// Send SMS
 		$chikka->send($mobile, $message);
 	}
+
+	public function getTransactions()
+	{
+		$ongoingtransactions = Transactions::where('customer_id', Auth::guard('customers')->user()->id)->where('status','Active')->get();
+		$pendingtransactions = Transactions::where('customer_id', Auth::guard('customers')->user()->id)->where('status','Pending')->get();
+		$previoustransactions = Transactions::where('customer_id', Auth::guard('customers')->user()->id)->where('status','Finished')->get();
+
+		return view('customer.activities')->with(['ongoingtransactions' => $ongoingtransactions, 'pendingtransactions' => $pendingtransactions, 'previoustransactions' => $previoustransactions]);
+	}
+
+	public function addAmount(Request $request)
+	{
+		$transaction = Transactions::find($request['id']);
+
+		$transaction->amount = $request['amount'];
+		$transaction->save();
+
+		return $transaction;
+	}
+
+	public function deletePending(Request $request)
+	{
+		$transaction = Transactions::find($request['id']);
+
+		$transaction->delete();
+
+		return $transaction;
+	}
+
+	public function makeActive(Request $request)
+	{
+
+		$transaction = Transactions::find($request['id']);
+
+		if($transaction->amount != 0){
+			$transaction->status = 'Active';
+			$transaction->save();
+		}
+
+		return $transaction;
+	}
+
+	public function moveToFinish(Request $request)
+	{
+
+		$transaction = Transactions::find($request['id']);
+
+		if($transaction->amount != 0){
+			$transaction->status = 'Finished';
+			$transaction->remarks = $request['rating'];
+			$transaction->c_accepted = '1';
+			$transaction->save();
+		}
+
+		return $transaction;
+	}
+
+
+
 }
 

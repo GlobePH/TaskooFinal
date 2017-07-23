@@ -160,3 +160,27 @@ function getDistance(fromLat, fromLng, toLat, toLng){
 
 	}
 }
+
+function confirmTransac(id) {
+	swal({
+		title: "Are you sure?",
+		text: "Are you sure you want to close this service to finish?",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonClass: "success",
+		confirmButtonText: "Yes",
+		closeOnConfirm: false
+	},
+	function(){
+		var urlDelete = url + 'worker/move_finish';
+		$.post(urlDelete, {_token:token, id:id})
+		.done(function(data){
+			console.log(data)
+			swal("Success!", "Transaction was successfully closed.", "success");
+			location.reload();
+		})
+		.fail(function(){
+			swal("Ooooops!", "Please try again later.", "error");
+		});
+	});
+}

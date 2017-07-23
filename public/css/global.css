@@ -9,30 +9,31 @@ input[type='text'], input[type='password'], input[type='email']{
 	border-radius: 0 !important;
 }
 
-.alert-danger{
+
+.alert-danger, .btn-danger{
 	background-color: #c0392b !important;
 	color: #fff !important;
 	border-color: #c0392b !important;
-	border-radius: 0;
+	border-radius: 0 !important;
 }
 
-.alert-success{
+.alert-success, .btn-success{
 	background-color: #27ae60!important;
 	color: #fff!important;
 	border-color: #27ae60!important;
-	border-radius: 0;
+	border-radius: 0 !important;
 }
 
-.alert-warning{
+.alert-warning, .btn-warning{
 	background-color: #e67e22!important;
 	color: #fff!important;
 	border-color: #e67e22!important;
-	border-radius: 0;
+	border-radius: 0 !important;
 }
 
-.alert-info{
+.alert-info, .btn-info{
 	background-color: #2980b9!important;
 	color: #fff !important;
 	border-color: #2980b9 !important;
-	border-radius: 0;
+	border-radius: 0 !important;
 }

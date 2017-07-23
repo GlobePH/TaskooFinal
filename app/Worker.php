@@ -12,7 +12,7 @@ class Worker extends Authenticatable
 
     public function profile()
     {
-    	return $this->hasOne('App\WorkerProfile');
+    	return $this->belongsTo('App\WorkerProfile','id');
     }
 
     public function location()

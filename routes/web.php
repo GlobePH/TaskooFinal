@@ -42,6 +42,7 @@ Route::get('customer/new', function () {
 Route::group(['middleware' => ['web']], function () {
 	Route::get('worker/logout','WorkerController@logout' );
 	Route::get('worker/dashboard','WorkerController@getDashboard' );
+	Route::post('worker/move_finish','WorkerController@moveToFinish');
 
 });
 
@@ -49,7 +50,14 @@ Route::group(['middleware' => ['web', 'customers']], function () {
 	Route::get('customer/logout','CustomerController@logout' );
 	Route::get('customer/dashboard','CustomerController@getDashboard' );
 	Route::post('customer/search/{type}','CustomerController@getWorkers' );
-	Route::get('customer/notify/{id}','CustomerController@notifyWorker' );
+	Route::post('customer/notify/{id}','CustomerController@notifyWorker' );
 	Route::get('customer/send/sms','CustomerController@sendSMS' );
+	Route::get('customer/activities','CustomerController@getTransactions' );
+
+	Route::post('customer/add_amount','CustomerController@addAmount');
+	Route::post('customer/delete_pending','CustomerController@deletePending');
+	Route::post('customer/make_active','CustomerController@makeActive');
+	Route::post('customer/move_finish','CustomerController@moveToFinish');
+
 
 });
