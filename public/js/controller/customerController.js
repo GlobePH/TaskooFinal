@@ -176,6 +176,7 @@ function getDistance(fromLat, fromLng, toLat, toLng){
 	}
 }
 
+
 function mapData(type) {
 	mapObj.removeMarkers();
 	var urlSearch = url + 'customer/search/' + type;
@@ -205,9 +206,9 @@ function mapData(type) {
 					}
 				});
 			});
-		}	
+		}
 
-		
+
 	})
 	.fail(function(){
 		console.log("Error ..");
@@ -236,6 +237,7 @@ function hireWorker(id,name){
 		});
 	});
 }
+
 
 function addAmount(id) {
 	var amount = $('#amount_' + id).val();

@@ -41,7 +41,7 @@ class WorkerController extends Controller
 			$idName = $request['reg_w_first_name'] .'-'.$request['reg_w_last_name'] . '.' . $request->file('reg_w_cv')->getClientOriginalExtension();
 			$request->file('reg_w_id')->move(public_path('files/id/') , $idName);
 		}
-		
+
 		$worker = new Worker();
 
 		$worker->first_name = $fname;
@@ -109,13 +109,13 @@ class WorkerController extends Controller
 		$location->updated_at = Carbon::now();
 
 		$location->save();
+
 		if (Auth::attempt(['email' => $email, 'password' => $password])) {
 			return view('responses.success_register')->with('user', 'worker');
 		}else{
 			return redirect()->back()->with('invalid','Invalid Login Credentials.');
 		}
-		
-		
+
 	}
 
 	public function login(Request $request)

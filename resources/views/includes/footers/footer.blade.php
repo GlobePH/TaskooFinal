@@ -19,12 +19,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$(".js-example-basic-multiple").select2();
-		$(".js-example-basic-single").select2();
 
-		var url = '{{ env('APP_URL') }}';
-		var token = '{{ csrf_token()}}';
 	</script>
-	
+	<!--Scroll to Top -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow78.js"></script>
+
+
+	</script>
+
 	@if(Auth::check())
 	<script type="text/javascript" src="{{ asset('js/controller/workerController.js')}}"></script>
 	@elseif(Auth::guard('customers')->check())
@@ -32,5 +35,3 @@
 	@else
 	<script type="text/javascript" src="{{ asset('js/getLocation.js') }}"></script>
 	@endif
-
-	

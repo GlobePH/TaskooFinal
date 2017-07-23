@@ -10,8 +10,13 @@ html, body {
   border: 1px dashed #282828;
 }
 */
+.ranking > div{
+  border: 1px solid #AAA;
+  text-align:center;
+}
+
 .homeSidebar {
-  border-right: 1px solid #DDD;
+  border-right: 1px solid #AAA;
   font-size:1.5em;
 }
 
@@ -54,7 +59,7 @@ html, body {
   background-color: #FFF;
   color:#000;
   margin-right:2em;
-  border:1px solid #DDD;
+  border:1px solid #AAA;
   width:30em;
   height:5em;
   align:center;
@@ -108,7 +113,7 @@ html, body {
   width: 15em;
 }
 nav > .navbar {
-  border-bottom:1px solid #DDD;
+  border-bottom:1px solid #444;
 }
 a > div {
   text-decoration:none;

@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+$(document).ready(function(){
 
 	var mapObj = new GMaps({
 		el: '#map',
@@ -56,13 +56,13 @@ $(document).ready(function(){
 	];
 	// getDistance(14.5498,121.0552,14.5534,121.0547);
 
-	for (i = 0; i < locations.length; i++) { 
+	for (i = 0; i < locations.length; i++) {
 		mapObj.addMarker({
 			lat: locations[i][1],
 			lng: locations[i][2],
 			icon: 'https://image.flaticon.com/icons/png/32/34/34343.png',
 			mouseover: function(e) {
-				getDistance(14.5498,121.0552,14.5534,121.0547);	
+				getDistance(14.5498,121.0552,14.5534,121.0547);
 			}
 		});
 	}
@@ -90,9 +90,7 @@ $(document).ready(function(){
 	console.log(window.localStorage.getItem('lng'));
 });
 
-$(window).unload(function(){
-	localStorage.clear();
-});
+
 
 
 function getFormattedAddress(lat, lng){
@@ -115,7 +113,7 @@ function getFormattedAddress(lat, lng){
 				// console.log(results[4].formatted_address)
 				// console.log(results[5].formatted_address)
 				// console.log(results[6].formatted_address)
-			} 
+			}
 		} else {
 			console.log("error")
 		}
