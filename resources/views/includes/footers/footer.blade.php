@@ -1,5 +1,4 @@
-
-	<!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,7 +10,7 @@
 	<!-- tooltip -->
 	<script>
 	$(document).ready(function(){
-			$('[data-toggle="tooltip"]').tooltip();
+			// $('[data-toggle="tooltip"]').tooltip();
 	});
 	</script>
 
@@ -19,13 +18,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$(".js-example-basic-multiple").select2();
-
+		console.log("sad")
+ 		var token = '{{ csrf_token()}}'; 
+		var url = '{{ env('APP_URL') }}';
 	</script>
 	<!--Scroll to Top -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow78.js"></script>
 
-
+	{{-- var url = '{{ env('APP_URL') }}';
+ 		var token = '{{ csrf_token()}}'; --}}
 	</script>
 
 	@if(Auth::check())

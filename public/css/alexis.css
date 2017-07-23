@@ -11,7 +11,7 @@ html, body {
 }
 */
 .ranking > div{
-  border: 1px solid #AAA;
+  border: 1px solid #AAA !important;
   text-align:center;
 }
 
